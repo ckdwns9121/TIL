@@ -34,12 +34,22 @@
   * 두번째
   * 세번째
 
+## 4.코드블럭
 
-This is a normal paragraph:
+    This is a normal paragraph:
 
-    This is a code block.
+        This is a code block.
     
-end code block.
+    end code block.
+적용결과
+
+    This is a normal paragraph:
+
+        This is a code block.
+    
+    end code block.
+
+
 　
      
 
