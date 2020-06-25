@@ -3,7 +3,7 @@
 자주쓰는 명령어
 
 * git init : git 생성하기
-*  git clone git_path : 코드가져오기
+* git clone git_path : 코드가져오기
 * git checkout branch_name : 브랜치 선택하기
 * git checkout -t remote_path/branch_name : 원격 브랜치 선택하기
 * git branch branch_name : 브랜치 생성하기
