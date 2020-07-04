@@ -54,6 +54,10 @@
 
 #### immer 설치
 
-    & yarn add immer
+    $ yarn add immer
 
+
+#### axio 설치
+
+    $ yarn add axio
 
