@@ -47,9 +47,13 @@
     $ nodemon ./server.js
 
 
+#### redux 설치
+
+    $ yarn add redux react-redux
 
 
+#### immer 설치
 
-
+    & yarn add immer
 
 
