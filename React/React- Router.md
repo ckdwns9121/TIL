@@ -40,3 +40,27 @@
 
 
 2. 라우트 설정하기 
+
+```
+    import React, { Component } from 'react';
+    import { Route } from 'react-router-dom';
+    import { Home, About } from 'pages';
+
+
+    class App extends Component {
+        render() {
+            return (
+                <div>
+                <Route exact path="/" component={Home}/>
+                <Route path="/about" component={About}/>
+                </div>
+        );
+     }
+    }
+    
+
+    export default App;
+```
+
+라우트를 설정 할 때에는 Route 컴포넌트를 사용하고 경로에 Path를 준다.  
+exact 는 주어진 경로와 정확히 맞아 덜어져야만 설정한 컴포넌트를 보여준다.  
