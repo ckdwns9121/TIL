@@ -17,7 +17,8 @@
      }  
   
 
-1.src/client/Root.js 생성
+1. src/client/Root.js 생성
+
 
     //Root 컴포넌트 생성후 BrowserRouter 적용
     import React from 'react';
@@ -33,3 +34,5 @@
     export default Root;
 
 
+
+2. 라우트 설정하기 
