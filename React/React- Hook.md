@@ -1,14 +1,16 @@
 ## 리액트 훅
 
-#### HOOK
+#### Hooks
 
-    함수형 컴포넌트에서도 상태를 사용할 수 있게 함
+    Hooks는 함수형 컴포넌트에서 state를 제공함으로써 상태 관련 로직의 재사용을   
+    이전보다 훨씬 쉽게 만들어준다.
 
 
 * useState
 
-  가장 기본적인 Hook이며 함수형 컴포는트에서도 가변적인 상태를 지닐 수 있게 함.   
-  하나의 상태는 하나의 useState가 사용되어야 함   
+  - 가장 기본적인 Hook이며 함수형 컴포는트에서도 가변적인 상태를 지닐 수 있게 함.   
+  - 하나의 상태는 하나의 useState가 사용되어야 함 
+  - useState는 함수에 state를 제공한다. initialState를 파라미터로 받고 state와 state를 변경할 setState함수를 반환한다. 
 
 ```  
 
@@ -23,7 +25,9 @@
 * useEffect 
 
     - 리액트 컴포넌트가 렌더될 때 마다 특정 작업을 수행하도록 설정하는 Hook
-    - 마운트 될때만 실행하는 방법 => 2번째 파라미터로 비어있는 배열을 넣어줌.
+    - 클래스형 컴포넌트에서 componentDidMount, componentDidUpdate, componentWillUnmount의 기능을 수행
+    - render가 발생할 때 마다 effect가 실행된다. 두번째 파라미터인 inputs를 통해 특정 상태가 update 되었을 때만 실행 가능
+
 ```
 
     useEffect(()=> {   
@@ -48,7 +52,7 @@
 * useDispatch
 
     - 컴포넌트 내에서 dispatch를 사용하게 하는 함수.
-    
+
 
 * useReducer
 
