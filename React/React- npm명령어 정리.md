@@ -59,5 +59,5 @@
 
 #### axio 설치
 
-    $ yarn add axio
+    $ yarn add axios
 
