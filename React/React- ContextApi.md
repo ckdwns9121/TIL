@@ -1,5 +1,7 @@
 ## Context-api 사용법
 
+#### state를 전역에서 사용할 수 있는 함수
+
 #### Props Driing 현상
 * Props Driing 현상이란 부모 컴포넌트에서 하위 컴포넌트에게 props를 전달 하기위해 모든 컴포넌트에게 props를 전달 해야하는 패턴
 
