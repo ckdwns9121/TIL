@@ -105,6 +105,7 @@ activeStyle로 스타일 선언
     };
     <NavLink to ="/" activeStlye={activeStyle}> 홈 </NavLink>
 
+```
 
 
 5. 라우터속 라우터
