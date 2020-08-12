@@ -80,6 +80,10 @@
 
     - 함수형 컴포넌트에서 ref를 쉽게 사용할 수 있도록 도와줌   
 
+* useHistroy
+
+    - react-router-dom 에서 제공하는 hook
+    - useHistory 내장 함수로 푸쉬 , 리다이렉션 ,백 등 라우터처럼 사용
 
 
 
