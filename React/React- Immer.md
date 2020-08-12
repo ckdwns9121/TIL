@@ -16,15 +16,16 @@
 
 * 예제 소스
 
+- 새로운 상태 푸쉬
 ```
     import produce from "immer"
     const baseState = [
     {
-        todo: "Learn typescript",
+        data: "hello",
         done: true
     },
     {
-        todo: "Try immer",
+        data: "world",
         done: false
     }
     ]
@@ -35,3 +36,26 @@
     })
 ```
 
+- 특정 상태 제거
+```
+   const baseState =[
+       {
+           id :1,
+           data: "hello",
+           done : true,
+       },
+       {
+           id :2,
+           data: "world",
+           done : false,
+       }
+    
+   ]
+   
+    const removeId= 1;
+    
+    const index = baseState.findIndex(data => data.id ===removeId);
+    produce ( baseState, draftState =>{
+        draftState.splice(index,1)
+    })
+```
