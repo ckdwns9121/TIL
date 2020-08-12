@@ -93,9 +93,7 @@
 Link 컴포넌트를 이용해 페이지를 이동한다.
 
 ```Link
-
    <Link to "/path"> Path </Link> 
-
 ```
 
 - NavLink 컴포넌트
@@ -104,7 +102,6 @@ Link 컴포넌트를 이용해 페이지를 이동한다.
 activeStyle로 스타일 선언
 
 ```NavLink
-
     const activeStyle = {
         height: '100%',
         textDecoration: 'none',
@@ -112,7 +109,6 @@ activeStyle로 스타일 선언
         borderBottom: '3px solid #000'
     };
     <NavLink to ="/" activeStlye={activeStyle}> 홈 </NavLink>
-
 ```
 
 
@@ -122,11 +118,9 @@ activeStyle로 스타일 선언
 <Switch>컴포넌트를 사용하면 그 하위에 있는 <Route>컴포넌트에 매치되더라도 무시된다.
 
 ``` 404
-    
     <Switch>
      <Route exact path ="/" component={Home}/>
      <Route path ="/about" component={About}/>
      <Route component={NotFound}/>
      </Switch>
-
 ```
