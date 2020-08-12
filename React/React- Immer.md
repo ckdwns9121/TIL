@@ -3,8 +3,9 @@
 * 리액트는 절대로 상태관리를 직접해선 안됨
   
    immer을 사용하면 상태관리를 직접하는 것 처럼 사용할 수 있음.
+```   
    $ yarn add immer 
-
+```
 
 * immer 에서 신경써야할 produce
 
@@ -15,8 +16,8 @@
 
 * 예제 소스
 
+```
     import produce from "immer"
-
     const baseState = [
     {
         todo: "Learn typescript",
@@ -32,5 +33,5 @@
         draftState.push({ todo: "Tweet about it" })
         draftState[1].done = true
     })
-
+```
 
