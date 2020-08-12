@@ -13,13 +13,11 @@
   - useState는 함수에 state를 제공한다. initialState를 파라미터로 받고 state와 state를 변경할 setState함수를 반환한다. 
 
 ```  
-
     import React, {usetState} from 'react'
     const Conter = () =>{
         const [value,setValue] = useState(0) //기본 상태값 셋팅
         const [number,setNumver] = useState(0)
     }
-
 ``` 
    
 * useEffect 
@@ -29,7 +27,6 @@
     - render가 발생할 때 마다 effect가 실행된다. 두번째 파라미터인 inputs를 통해 특정 상태가 update 되었을 때만 실행 가능
 
 ```
-
     useEffect(()=> {   
         console.log("마운트");   
     },[])    
@@ -41,7 +38,6 @@
         console.log(name);   
     },[name])   
     ...   
-
 ```
 
 * useSelector
