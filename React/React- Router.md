@@ -79,7 +79,7 @@
 
 4. 라우터 이동하기
 
-- Link 컴포넌트 
+- Link 컴포넌트
 
 페이지 이동시 사용하는 컴포넌트, a태그로 링크를 걸면 새로고침 되기 때문에    
 Link 컴포넌트를 이용해 페이지를 이동한다.
@@ -89,5 +89,22 @@ Link 컴포넌트를 이용해 페이지를 이동한다.
    <Link to "/path"> Path </Link> 
 
 ```
+
+- NavLink 컴포넌트
+
+페이지 이동시 (메뉴 탭 과 같은) 활성화 된 link의 스타일을 바꿀 수 있도록 함   
+activeStyle로 스타일 선언
+
+```NavLink
+
+    const activeStyle = {
+        height: '100%',
+        textDecoration: 'none',
+        color: 'black',
+        borderBottom: '3px solid #000'
+    };
+    <NavLink to ="/" activeStlye={activeStyle}> 홈 </NavLink>
+
+
 
 5. 라우터속 라우터
