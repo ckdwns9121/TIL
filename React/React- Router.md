@@ -116,4 +116,17 @@ activeStyle로 스타일 선언
 ```
 
 
-5. 라우터속 라우터
+5. 404 페이지 처리
+
+<Switch>로 모든 <Route> 컴포넌트로 묶어줘야 한다.   
+<Switch>컴포넌트를 사용하면 그 하위에 있는 <Route>컴포넌트에 매치되더라도 무시된다.
+
+``` 404
+    
+    <Switch>
+     <Route exact path ="/" component={Home}/>
+     <Route path ="/about" component={About}/>
+     <Route component={NotFound}/>
+     </Switch>
+
+```
