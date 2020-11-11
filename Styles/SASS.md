@@ -86,4 +86,99 @@
     }
 ```
 
+### 5.1 mixin 활용
 
+```
+    @mixin transition($transition...){
+        -moz-transition : $transition;
+        -o-transition : $transition;
+        -webkit-transition : $transition;
+        transition : $transition;
+    }
+
+    .move-button{
+        @include transition(all 0.3s);
+    }
+
+    // @each문으로 리스트 반복
+    @mixin transition($time){
+        @each $prefix in -moz-, -o-, -webkit- ,''{
+            #{$prefix}transition :$time;
+        }
+    }
+    .move-button{
+        @include transition(0.3s);
+    }
+```
+
+### 6. 조건문
+
+- sass는 조건문을 사용할 수 있다.
+
+```
+    $jb-type : jb-blue;
+    p{
+        @if $jb-type== jb-red{
+            color:red;
+        }
+        @else if $jb-type ==jb-blue{
+            color:blue;
+        }
+        @else{
+            color:black;
+        }
+    }
+```
+
+### 7. 반복문
+
+```
+    $i :1;
+    $gutter : 12px;
+
+    @while  $i<=10{
+        .box-#{$i}{
+            width : (60px * $i) + $gutter * ($i - 1);
+        }
+        $i : $i + 1;
+    } 
+
+    $total : 12;
+    @for $i from 1 to $total{
+        .box-#{$i}{
+            width : 70px * $i;
+        }
+    }
+```
+
+### 8. 함수
+- 함수는 mixin 과 비슷한 기능을 하지만 mixin은 style을 반환하고 함수는 값을 반환한다.
+
+```
+    $wrap-width : 1000px;
+    @function set-width($n){
+        @return $wrap-width /$n;
+    }
+```
+
+### 9. import (불러오기)
+
+- 다른 파일의 스타일을 불러올 수 있다.
+```
+    @import '../styles/root.scss';
+```
+
+### 10. extend (상속)
+
+- 다른 스타일을 그대로 상속하여 다른 스타일을 추가할 수 있다.
+
+```
+    .box{
+        width : 50px;
+        height :50px;
+    }
+    .box2{
+        @extend .box;
+        border:1px solid red;
+    }
+```
