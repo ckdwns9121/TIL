@@ -47,4 +47,43 @@
 
 ### 5.믹스인
 
+- mixin은 sass에서 가장 많이 사용하는 문법이며 재사용성과 코드의 가독성을 높여준다.
+- mixin으로 반복되는 구조의 틀을 잡아놓고 @include 지시자로 불러서 쓸 수 있다.
+
 ```
+    //mixin 선언
+    @mixin box{
+        color:#000;
+        width :100%;
+        height: 100%;
+        display:flex;
+        flex-direction:column;
+    }
+    //mixin 사용
+    .box{
+        @include box;
+    }
+
+```
+
+- mixin은 함수처럼 사용 가능. 
+
+```
+    //파라메터로 color와 width를 주고 값이 없을 시 초기화.
+    @mixin box($color : #000, $width : 100%){
+         color:$color;
+        width :$width;
+        height: 100%;
+        display:flex;
+        flex-direction:column;
+    }
+
+    .box{
+        @mixin box();
+    }
+    .box2{
+        @mixin box(#fff, 50%);
+    }
+```
+
+
