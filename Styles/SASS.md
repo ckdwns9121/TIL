@@ -19,32 +19,29 @@
 ```
     width : 100% - 20px (x)
     이런 작업을 하려면 calc() 함수를 사용.
-
 ```
 
 ```
     width : 300px / 100px * 100% (o)
-
 ```
 
 ### 3. 내장함수
 
-```
-    [내장함수 오픈링크](http://jackiebalzer.com/color)
+- sass에는 내장함수들이 있다.
 
-```
+[내장함수 오픈링크](http://jackiebalzer.com/color)
 
 ### 4. 중첩
 
-```
+- 코드를 블럭단위로 중첩시킬 수 있다.
 
+```
     .container{
         
         h1{
             color:$color;
         }
     }
-
 ```
 
 
