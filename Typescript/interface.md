@@ -63,4 +63,22 @@
 ```
 
 - 초과 프로퍼티 검사
-    -
+    - 객체 리터럴은 다른 변수에 할당할 때나 인수로 전달할 때, 특별한 처리를 받고, 초과 프로퍼티 검사를 받는다.   
+    - 만약 객체 리터럴이 "대상 타입"이 갖고 있지 않은 프로퍼티를 갖고 있으면, 에러가 발생한다.
+
+```
+    let mySquare = createSquare({color :"red", width:100});
+```
+이 검사를 피하는 방법은 타입 단언을 사용하는 것이다. (타입단언 : 컴파일러가 가진 정보를 무시하고 원하는 임의의 타입을 값에 할당하고 싶을 때 쓴다.)
+```
+    let mySquare = createSquare({width:100, opacity:0.5} as SquareConfig);
+```
+특별한 경우 추가 프로퍼티가 있을 시 인덱스 서명을 추가한다.
+
+```
+    interface SquareConfig{
+        color?: string;
+        width: number;
+        [propName :string] : any;
+    }
+```
