@@ -82,3 +82,23 @@
         [propName :string] : any;
     }
 ```
+
+- 함수타입
+    - 인터페이스는 함수 타입을 설명할 수 있다.
+    - 인터페이스로 함수 타입을 기술하기 위해, 인터페이스에 호출 서명이 필요하다.
+
+```
+    interface SearchFunc{
+        (source:string, subString:string) : boolean;
+    }
+```
+한번 정의되면, 함수 타입 인터페이스는 다른 인터페이스처럼 사용할 수 있다.
+
+```
+    let mySearch: SearchFunc;
+    mySearch = function(source:string, subString:string){
+        let result = source.search(subString);
+        return result>-1;
+    }
+```
+
