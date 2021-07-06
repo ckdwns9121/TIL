@@ -13,4 +13,5 @@
 - 지정한 CSS width 및 height를 전체 영역에 적용한다.
 - border, padding, margin을 모두 합산하기 때문에 컨텐츠 영역이 설정 값 보다 작아질 수 있다.
 
+
 ![ex_screenshot](../Asset/border-box.png)
