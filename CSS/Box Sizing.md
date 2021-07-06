@@ -78,3 +78,6 @@ padding: 0 , margin:0, border:5px, width:100px, height:100px 일때
 
 content width = 90px
 content height = 90px
+
+
+전체적인 디자인 디테일 잡을때 유용한 속성이니 꼭 알아두자
