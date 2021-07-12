@@ -1,4 +1,4 @@
-# Box-Sizing 속성에 대해 알아보자
+# Box-Sizing 속성에 대해 알아보자😁
 
 - box-sizing은 박스의 크기를 어떤 기준으로 계산할 지 정하는 속성
 - 기본값 : content-box
