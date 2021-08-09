@@ -49,3 +49,53 @@
 이처럼 자신을 포함하고 있는 외부함수보다 내부함수가 더 오래 유지되는 경우, 외부 함수 밖에서 내부함수가 호출되더라도 외부함수의 지역 변수에 접근할 수 있는데 이러한 함수를 클로저라고 부른다.
 ```
 
+
+2. 클로저의 활용
+
+- 클로저는 자신이 생성될 떄의 환경을 기억해야하므로 메모리 차원에서 손해를 볼 수 있다. 하지만 클로저는 자바스크립트의 강력한 기능이므로 이를 적극 활용 하여야한다.
+
+## 상태유지
+
+클로저가 가장 유용하게 사용되는 상황은 현재상태를 기억하고 변경된 최신상태를 유지하는것.
+
+
+```javascript
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <button class="toggle">toggle</button>
+    <div class="box" style="width: 100px; height: 100px; background: red;"></div>
+
+    <script>
+        var box = document.querySelector('.box');
+        var toggleBtn = document.querySelector('.toggle');
+
+        var toggle = (function () {
+        var isShow = false;
+
+        // ① 클로저를 반환
+        return function () {
+            box.style.display = isShow ? 'block' : 'none';
+            // ③ 상태 변경
+            isShow = !isShow;
+        };
+        })();
+
+        // ② 이벤트 프로퍼티에 클로저를 할당
+        toggleBtn.onclick = toggle;
+    </script>
+    </body>
+    </html>
+```
+
+```
+1. 즉시실행함수는 함수를 반환하고 즉시 소멸한다. 즉시실행함수가 반환하는 함수는 자신이 실행됐을 때의 렉시컬 환경에 속한 변수 isShow를 기억하는 클로저이다.
+
+2. 클로저를 이벤트 핸들러로서 이벤트 프로퍼티에 할당하였다. 이벤트 프로퍼티에서 클로저를 제거하지 않는 한 클로저가 기억하는 렉시컬 환경의 변수 isShow는 소멸하지 않는다. 다시말해 현재상태를 기억한다.
+
+3. 버튼을 클릭하면 이벤트 핸들러인 클로저가 호출된다. 이때 isShow값이 변경된다. isShow는 클로저에의해 참조되고 있기 때문에 유효하며 자신의 변경된 최신상태를 계속해서 유지한다.
+
+```
+
+만약 자바스크립트에 클로저라는 기능이 없다면 전역변수를 선언해서 사용해야 할 것이다.   
+전역변수는 누구든 어디서 접근가능하기 때문에 오류를 발생시킬 수 있다.
