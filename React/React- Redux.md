@@ -17,7 +17,7 @@
 
 
 ```typescript 
-    // as const를 액션에 붙여줌으로써 나중에 액션 객체를 만들때 타입을 추론하는 과정에서 action.type이 문자열로 추론되지 않고 'counter/INCREMENT'라는 실제 고정된 문자열 값으로 추론하기 위함. 
+    // as const를 액션에 붙여줌으로써 나중에 액션 객체를 만들때 타입을 추론하는    과정에서 action.type이 문자열로 추론되지 않고    'counter/INCREMENT'라는 실제 고정된 문자열 값으로 추론하기 위함. 
     const INCREMENT = 'counter/INCREMENT' as const //액션
 
 ```
