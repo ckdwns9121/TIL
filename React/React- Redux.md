@@ -2,7 +2,10 @@
 
 ## 1. 리덕스란
 
-   상태관리를 전역에서 할 수 있도록 해주는 모듈
+   Redux는 JavaScript 앱을 위한 예측 가능한 상태 컨테이너이다.   
+   Flux개념을 바탕으로한 React에서 가장 많이 사용되는 상태관리 라이브러리.
+
+
 
 
 ## 2. 리덕스에서 사용되는 키워드
@@ -73,3 +76,11 @@
     })  
     export default connect(mapToStateProps,mapToDispatchProps)(TestContainer);  
 
+
+## 번외. Flux 패턴이란
+
+    Flux 어플리케이션에서의 데이터의 흐름은 단방향으로 흐른다.
+
+![ex_screenshot](../Asset/flux.png)
+
+    단방향 데이터 흐름은 Flux패턴의 핵심.
