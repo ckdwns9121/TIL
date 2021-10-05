@@ -50,12 +50,12 @@
     
     end code block.
 
-- ```을 이용하는 방법
+**```** 을 이용하는 방법
 
 ```javascript
-    function test(){
-        console.log('hello');
-    }
+function test(){
+    console.log('hello');
+}
 ```
 ### 링크
 
@@ -68,8 +68,9 @@
 
 ### 강조 표시를
 
+**강조**
 ```
-    **강조**
+**강조**
 ```
 
 ### 이미지 사용법
