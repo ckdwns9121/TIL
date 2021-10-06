@@ -5,16 +5,12 @@
    Redux는 JavaScript 앱을 위한 예측 가능한 상태 컨테이너이다.   
    Flux개념을 바탕으로한 React에서 가장 많이 사용되는 상태관리 라이브러리.
 
-
-
-
 ## 2. 리덕스에서 사용되는 키워드
 
 * 액션
  
   상태에 어떠한 변화가 필요하게 될 때 액션타입을 명시해주는것,
   type :INCREMENT
-
 
 ```typescript 
 const INCREMENT = 'counter/INCREMENT' as const //액션
