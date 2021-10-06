@@ -70,9 +70,9 @@ const store = createStore(reducers)
 import {connect} from 'react-redux';  
 import {hello} from '../mudules;  
     
-const TestContainer =({test,onHello}){  
+const TestContainer =({test,onHello})=>{  
     return(  
-            <Test  
+        <Test
             test={test}  
             onHello={onHello}  
             />  
