@@ -42,6 +42,8 @@ function App(){
 ```
 
 ```javascript
+
+//클로저로 구현한 간단한 useState
 let value;
 
 export useState(initState) {
