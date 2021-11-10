@@ -25,7 +25,7 @@ number + boolean // number
 
 다른 연산자(-,/,*,%)는 number형이 string보다 우선시 되기 때문에 더하기와 같은 문자열로 변환이 일어나지 않는다. (문자<숫자)
 
-```
+```js
 //다른 연산자(-,*,/,%)
 string * number // number
 string * string // number
