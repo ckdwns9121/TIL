@@ -32,7 +32,7 @@ name='hello';
 그렇다면 let과 const는 호이스팅이 되지 않나? no
 let과 const는 TDZ영역을 받는다.
 
-### Temporal Dead Zone (TDZ)
+### Temporal Dead Zone(TDZ)
 
 let과 const가 호이스팅이 되기전 TDZ에 대해 알아야한다.
 
