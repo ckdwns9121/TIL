@@ -29,40 +29,39 @@
 
 1. src/client/Root.js 생성
 
-```
-    //Root 컴포넌트 생성후 BrowserRouter 적용
-    import React from 'react';
-    import { BrowserRouter } from 'react-router-dom';
-    import App from '../shared/App';
+```js
+//Root 컴포넌트 생성후 BrowserRouter 적용
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import App from '../shared/App';
 
-    const Root = () => (
-         <BrowserRouter>
-            <App/>
-        </BrowserRouter>
-    );
+const Root = () => (
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
+);
 
-    export default Root;
+export default Root;
 ```
 
 
 2. 라우트 설정하기 
 
-```
-    import React, { Component } from 'react';
-    import { Route } from 'react-router-dom';
-    import { Home, About } from 'pages';
+```js
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import { Home, About } from 'pages';
 
-
-    class App extends Component {
-        render() {
-            return (
-                <div>
-                <Route exact path="/" component={Home}/>
-                <Route path="/about" component={About}/>
-                </div>
+class App extends Component {
+    render() {
+        return (
+        <div>
+            <Route exact path="/" component={Home}/>
+            <Route path="/about" component={About}/>
+        </div>
         );
-     }
     }
+}
     
 
     export default App;
@@ -95,8 +94,8 @@
 페이지 이동시 사용하는 컴포넌트, a태그로 링크를 걸면 새로고침 되기 때문에    
 Link 컴포넌트를 이용해 페이지를 이동한다.
 
-```Link
-   <Link to "/path"> Path </Link> 
+```js
+<Link to "/path"> Path </Link> 
 ```
 
 - NavLink 컴포넌트
@@ -104,14 +103,14 @@ Link 컴포넌트를 이용해 페이지를 이동한다.
 페이지 이동시 (메뉴 탭 과 같은) 활성화 된 link의 스타일을 바꿀 수 있도록 함   
 activeStyle로 스타일 선언
 
-```NavLink
-    const activeStyle = {
-        height: '100%',
-        textDecoration: 'none',
-        color: 'black',
-        borderBottom: '3px solid #000'
-    };
-    <NavLink to ="/" activeStlye={activeStyle}> 홈 </NavLink>
+```js
+const activeStyle = {
+    height: '100%',
+    textDecoration: 'none',
+    color: 'black',
+    borderBottom: '3px solid #000'
+};
+<NavLink to ="/" activeStlye={activeStyle}> 홈 </NavLink>
 ```
 
 
@@ -120,10 +119,10 @@ activeStyle로 스타일 선언
 <Switch>로 모든 <Route> 컴포넌트로 묶어줘야 한다.   
 <Switch>컴포넌트를 사용하면 그 하위에 있는 <Route>컴포넌트에 매치되더라도 무시된다.
 
-``` 404
-    <Switch>
-     <Route exact path ="/" component={Home}/>
-     <Route path ="/about" component={About}/>
-     <Route component={NotFound}/>
-     </Switch>
+```js
+<Switch>
+    <Route exact path ="/" component={Home}/>
+    <Route path ="/about" component={About}/>
+    <Route component={NotFound}/>
+</Switch>
 ```
