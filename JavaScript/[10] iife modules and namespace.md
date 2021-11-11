@@ -47,3 +47,32 @@ init();
 })();
 ```
 이렇게 IIFE로 선언된 변수와 함수는 외부에서 접근이 불가능하다.
+
+### Module
+모듈은 다른사람의 코드나 내가 잘게 쪼개어 놓은 코드를 재사용하고 싶을 때 쓰는 것.
+
+```js
+// 남의 코드들 먼저 불러오기
+<script src="jquery.js"></script>
+<script src="tweenmax.js"></script>
+// 그걸 사용해 내 코드 작성
+<script>
+window.$
+window.TweenMax
+</script>
+```
+이런식으로 불러오고자 하는 코드를 스크립트 태그에 추가한 뒤 내 스크립트에서 사용한다. 문제는 남의 코드들이 같은 변수를 사용할 때 일어난다.
+
+#### 1. AMD
+AMD는 Asynchronous Module Definition으로 비동기적 모듈 선언이라는 뜻이다. 이를 구현한 대표적인 스크립트가 **requireJS**이다.
+
+#### 2. CommonJS
+이 방식은 노드에서 채택한 방식으로 매우 자주 쓰인다. 
+
+```js
+const t = require('./test');
+module.exports={
+    t
+}
+```
+require로 불러와 module.export로 내보내기 한다.
