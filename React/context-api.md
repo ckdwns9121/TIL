@@ -9,58 +9,57 @@
 * 이러한 Props Driing 현상을 막기위해 전역 state를 선언하도록 해주는 api
 
 사용 예
+```js
+import React, { createContext } from 'react' //createContext를 react 에서 받아옴
 
-    import React, { createContext } from 'react' //createContext를 react 에서 받아옴
+// 1. Context를 생성
+const AppContext = createContext();
+class App extends Component{
+  state={
+      nickname: 'test',
+      isAdmin :true
+  }
 
-    // 1. Context를 생성
-    const AppContext = createContext();
-    class App extends Component{
-    state={
-        nickname: 'test',
-        isAdmin :true
-    }
-
-    render(){
-    console.log(this.state)
-    return(
-      <AppContext.Provider value={this.state}>
-      <div>
-        <Main />
-      </div>
-    </AppContext.Provider>
-     )
-    }
-    }
-
-    const Main = () => (
-    <main>
-        <Avatar />
-    </main>
-    )
-
-    const Avatar = () => (
+  render(){
+  console.log(this.state)
+  return(
+    <AppContext.Provider value={this.state}>
     <div>
-    <User />
+      <Main />
     </div>
+  </AppContext.Provider>
     )
+  }
+  }
+
+const Main = () => (
+  <main>
+      <Avatar />
+  </main>
+  )
+
+const Avatar = () => (
+  <div>
+    <User />
+  </div>
+  )
 
     // 2. AppContext.Consumer 컴포넌트를 이용해 Context에서 전달한 value를 사용
-    const User = () => (
-        <AppContext.Consumer>
-            {value => {
-            let label = 'user'
-            if (value.isAdmin) {
-            label = 'admin'
-         }
+const User = () => (
+    <AppContext.Consumer>
+        {value => {
+        let label = 'user'
+        if (value.isAdmin) {
+        label = 'admin'
+      }
 
-      return (
-        <div>
-          <div>{label}</div>
-          <div>{value.nickname}</div>
-        </div>
+  return (
+    <div>
+      <div>{label}</div>
+        <div>{value.nickname}</div>
+    </div>
       )
-     }}
-     </AppContext.Consumer>
-    )
-
-끝
+    }}
+    </AppContext.Consumer>
+)
+```
