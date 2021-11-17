@@ -16,22 +16,28 @@ before와 after를 쓸 때 content라는 속성이 반드시 필요하다.
 1. 구분 bar가 포함된 서브네비게이션에서 따로 div요소를 만들지 않아도 쉽게 구현할 수 있다.
 
 ```html
-    <style>
-        .list li{float:left;margin-left:5px;}
-        .list li ::before{padding-left:5px; content:"|";}
-        .list li :first-child::before{content:"";}
-    </style>
-    <div id="content">
-        <ul class="list">
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
-        </ul> 
-    </div>
+<style>
+  .list li {
+    float: left;
+    margin-left: 5px;
+  }
+  .list li ::before {
+    padding-left: 5px;
+    content: '|';
+  }
+  .list li :first-child::before {
+    content: '';
+  }
+</style>
+<div id="content">
+  <ul class="list">
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ul>
+</div>
 ```
-
 
 2. float 해제 방법
 
 부모요소에게 after를 사용하여 float되어 있는 요소를 clear 해준다.
-
