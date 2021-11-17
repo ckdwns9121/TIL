@@ -18,6 +18,7 @@
     3. 세번째
 
 결과
+
 1. 첫번째
 2. 두번째
 3. 세번째
@@ -27,19 +28,19 @@
     * 첫번째
       * 두번째
         * 세번째
-    
+
 결과
 
- * 첫번째
-  * 두번째
-  * 세번째
+- 첫번째
+- 두번째
+- 세번째
 
 ### 코드블럭
 
     This is a normal paragraph:
 
         This is a code block.
-        
+
     end code block.
 
 적용결과
@@ -47,23 +48,24 @@
     This is a normal paragraph:
 
         This is a code block.
-    
+
     end code block.
 
 **```** 을 이용하는 방법
 
 ```javascript
-function test(){
-    console.log('hello');
+function test() {
+  console.log('hello');
 }
 ```
+
 ### 링크
 
     참조링크:  [link keyword][id]
     외부링크:  [title][link]   ex [google](https://google.com ,"google link")
 
 링크
-    
+
 ### 수평선 hr 태그 사용
 
 <hr>
@@ -71,6 +73,7 @@ function test(){
 ### 강조 표시를
 
 **강조**
+
 ```
 **강조**
 ```
@@ -78,7 +81,7 @@ function test(){
 ### 이미지 사용법
 
 ```
-![ex_screenshot](../이미지 경로)   
+![ex_screenshot](../이미지 경로)
 ```
 
 ### 인용구 사용법
@@ -92,7 +95,7 @@ function test(){
 ```
 
 > 인용구1
->> 인용구2
->>> 인용구3 
-     
-
+>
+> > 인용구2
+> >
+> > > 인용구3
