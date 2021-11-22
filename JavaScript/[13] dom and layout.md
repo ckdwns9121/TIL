@@ -11,7 +11,7 @@ DOM에 대해 좀더 직관적으로 정의를 내리면 아래와 같다.
 
 DOM은 자료구조중 트리 형식을 가지고 있으며 이를 DOM Tree라고 부른다.
 
-![ex_screenshot](../Asset/dom-tree.png)
+![ex_screenshot](/asset/dom-tree.png)
 
 ### DOM의 문제점
 
