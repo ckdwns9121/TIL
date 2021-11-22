@@ -87,6 +87,6 @@ export default connect(mapToStateProps,mapToDispatchProps)(TestContainer);
 
     Flux 어플리케이션에서의 데이터의 흐름은 단방향으로 흐른다.
 
-![ex_screenshot](/asset/flux.png)
+![ex_screenshot](./asset/flux.png)
 
     단방향 데이터 흐름은 Flux패턴의 핵심.

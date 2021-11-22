@@ -49,7 +49,7 @@ V8 엔진은 크롬과 노드 안에서 동작한다.
 
 자바스크립트 엔진은 다음과 같은 두 가지 주요 구성 요소로 이루어져 있다.
 
-![ex_screenshot](/asset/heap-stack.png)
+![ex_screenshot](./asset/heap-stack.png)
 
 - 메모리 힙(Memory Heap): 객체는 힙, 대부분 구조화 되지 않은 메모리 영역에 할당된다. (변수,객체 등등 저장)
 
@@ -64,7 +64,7 @@ V8 엔진은 크롬과 노드 안에서 동작한다.
 브라우저에는 자바스크립트 개발자가 사용하는 거의 모든 API가 있다. (ex: setTimeout)  
 그러나 이런 API들을 엔진에서 제공해주지 않는다. 그렇다면 이 API는 어디서 오는 것일까?
 
-![ex_screenshot](/asset/runtime.png)
+![ex_screenshot](./asset/runtime.png)
 
 브러우저는 단순히 엔진 하나만으로 구성되어 있지 않다. DOM, AJAX, setTimeout등의 브라우저에서 제공하는 Web API라고 하는것들이 있다.  
 또한 이러한 Web API의 호출을 통제하기 위한 Event Queue와 Event Loop도 존재한다.
@@ -89,7 +89,7 @@ function printSquare(x) {
 printSquare(5);
 ```
 
-![ex_screenshot](/asset/call-stack.png)
+![ex_screenshot](./asset/call-stack.png)
 
 <br>
 
@@ -105,7 +105,7 @@ function foo() {
 foo();
 ```
 
-![ex_screenshot](/asset/stack-overflow.png)
+![ex_screenshot](./asset/stack-overflow.png)
 
 <br>
 

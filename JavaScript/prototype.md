@@ -42,7 +42,7 @@ console.log(kim.age); //16
 
 Person.prototype이라는 빈 Object가 어딘가에 존재하고 , Person 함수로 부터 생성된 객체들은 어딘가에 존재하는 Object를 참조하여 이 안에있는 값을 모두 사용할 수 있다.
 
-![ex_screenshot](/asset/prototype.png)
+![ex_screenshot](./asset/prototype.png)
 
 ### Prototype Link와 Prototype Object
 

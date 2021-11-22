@@ -28,7 +28,7 @@
 
 padding: 0 , margin:0, border:5px, width:100px, height:100px 일때
 
-![ex_screenshot](/asset/content-box.png)
+![ex_screenshot](./asset/content-box.png)
 
 전체 width = 5px + 100px + 5px = 110px
 전체 height = 5px + 100px + 5px = 110px
@@ -64,7 +64,7 @@ content height= 100px;
 
 padding: 0 , margin:0, border:5px, width:100px, height:100px 일때
 
-![ex_screenshot](/asset/border-box.png)
+![ex_screenshot](./asset/border-box.png)
 
 전체 width = 5px + 90px + 5px = 100px
 전체 height = 5px + 90px + 5px = 100px
