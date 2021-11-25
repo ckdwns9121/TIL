@@ -1,0 +1,78 @@
+# 고차 함수
+
+## 1. 들어가기전
+
+고차 함수의 개념을 완전히 이해하기 위해서 함수형 프로그래밍이 무엇인지와 `퍼스트 클래스 함수`의 개념을 이해해야 한다.
+
+## 2. 함수형 프로그래밍이란?
+
+함수형 프로그래밍은 함수를 다른 함수의 파라미터로 넘길 수도 있고 반환값으로 사용할 수 있는 프로그래밍 형태를 말한다.
+
+자바스크립트, Haskell, Clojure, Scala, Erlang은 전부 함수형 프로그래밍을 구현한 언어
+
+## 3. 퍼스트 클래스 함수
+
+자바스크립트를 사용하면서 함수를 일급 시민으로 대한다는것을 알고있다.
+일급 시민은 변수에 담을 수 있고, 함수(메소드)의 인자로 전달할 수 있다, 함수(메소드)의 반환값으로 사용할 수 있다.
+
+자바스크립트에서 함수는 전부 **객체**이다.
+
+```js
+function foo() {
+  console.log('hello foo');
+}
+foo(); // hello foo
+
+foo.test = 'test';
+console.log(foo.test); //test
+```
+
+오브젝트에 프로퍼티를 추가하듯 함수에 프로퍼티를 추가할 수 있다.
+
+하지만 이런 문법은 굉장히 위험하기 때문에 함수 객체에 프로퍼티를 추가하지 않는것을 권장한다.
+
+- ### 함수를 변수에 할당하기
+
+```js
+const foo = function (x) {
+  return x + x;
+};
+foo(1); //2;
+```
+
+- ### 함수를 다른함수의 인자로 넘기기
+
+```js
+function formalGreeting() {
+  console.log('How are you?');
+}
+
+function casualGreeting() {
+  console.log("What's up?");
+}
+
+function greet(type, greetFormal, greetCasual) {
+  if (type === 'formal') {
+    greetFormal();
+  } else if (type === 'casual') {
+    greetCasual();
+  }
+}
+
+// prints "What's up?"
+greet('casual', formalGreeting, casualGreeting);
+```
+
+## 4. 고차함수란
+
+고차함수는 함수를 인자로 받거나 또는 함수를 반환함으로써 작동하는 함수를 말한다.
+
+```js
+function plusTwo(num) {
+  return num + 2;
+}
+function doubleNum(func, num) {
+  let doubleArr = [];
+  return func(num);
+}
+```
