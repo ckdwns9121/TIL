@@ -1,10 +1,12 @@
-## 팩토리 함수와 클래스
+# 팩토리 함수와 클래스
 
-### 클래스
+## 클래스
 
 자바스크립트에서 클래스는 프로토타입을 기반으로 만들어진 특수 함수이다. 따라서 함수를 정의하듯 클래스 선언과 표현식으로 정의할 수 있다.
 
 `ES5`에서는 생성사 함수와 프로토타입, 클로저를 사용해 객체지향 프로그래밍을 구현하였다.
+
+> `생성 패턴`이란 클래스가 인스턴스를 생성하는 과정을 디자인한 패턴
 
 ```js
 var Person = (function () {
@@ -87,8 +89,90 @@ class Foo {
     this.arr = arr;
   }
 
-  get firstElem() {
+  get getArr() {
     return this.arr;
   }
+  set setArr(arr) {
+    this.arr = arr;
+  }
 }
+```
+
+### static method
+
+클래스의 정적메소드를 정의할때 `static`키워드를 사용한다. 정적 메소드는 클래스의 인스턴스가 아니라 클래스 자체로 호출한다. (인스턴스 없이도 호출가능)
+
+```js
+class Foo {
+  constructor(props) {
+    this._props = props;
+  }
+  static staticMethod() {
+    return 'static method';
+  }
+  prototypeMethod() {
+    return this._props;
+  }
+}
+
+console.log(Foo.staticMethod());
+
+const foo = new Foo(10);
+
+console.log(foo.staticMethod()); // Uncaught TypeError : foo.staticMethod is not function
+```
+
+### 상속
+
+클래스 상속은 코드 재사용 관점에서 매우 유용하다. 새롭게 정의할 클래스가 기존 클래스와 유사한 점이 많다면 상속을 통해 그대로 사용하면 된다.
+
+```js
+class Circle {
+  constructor(radius) {
+    this.radius = radius;
+  }
+  getDiameter() {
+    return 2 * this.radius;
+  }
+  getPerimeter() {
+    return 2 * this.radius * Math.PI;
+  }
+  getArea() {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+class Cylinder extend Circle{
+  constructor(radius,height){
+    super(radius);
+    this.height = height;
+  }
+  getArea(){
+    return (this.height * super.getPerimeter()) + (2* super.getArea());
+  }
+  getVolume(){
+    return super.getArea() * this.height;
+  }
+}
+```
+
+**super** 메소드는 자식 class의 생성자내부에서 부모클래스의 생성자를 호출한다.
+
+## 팩토리
+
+팩토리 함수란 클래스나 생성자 함수는 아니지만 새로운 객체를 리턴하는 함수이다.
+클래스나 `new`키워드 없이 객체 인스턴스를 생성가능.
+
+```js
+const User = ({ name, age }) => ({
+  name,
+  age,
+  setUser(name, age) {
+    this.name = name;
+    this.age = age;
+    return this;
+  },
+});
+
+console.log(User({ name: 'changejun', age: '25' }));
 ```
