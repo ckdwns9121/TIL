@@ -76,3 +76,28 @@ function doubleNum(func, num) {
   return func(num);
 }
 ```
+
+`Array.prototype.map` , `Array.prototype.filter`등 Array객체 내에 포함된(built-in) 고차함수이다.
+
+### Array.prototype.map
+
+`map()`메소드는 입력으로 들어온 배열 내 모든 엘리먼트를 인자로 제공받는 콜백함수를 호출함으로써 새로운 배열을 만들어낸다.
+
+### 코드예시
+
+```js
+//고차함수가 아닌 코드
+const arr1 = [1, 2, 3];
+const arr2 = [];
+
+for (let i = 0; i < arr1.length; i++) {
+  arr2.push(arr[i] * 2);
+}
+console.log(arr2); // [2,4,6]
+```
+
+```js
+const arr1 = [1, 2, 3];
+const arr2 = arr1.map(item => item * 2);
+console.log(arr2); //[2,4,6]
+```
