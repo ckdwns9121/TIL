@@ -1,6 +1,6 @@
 # 마크다운 문법 정리
 
-## 헤더
+### 헤더
 
     큰제목 (======)
     작은제목 (------)
@@ -37,23 +37,17 @@
 
 ### 코드블럭
 
+```
     This is a normal paragraph:
 
         This is a code block.
 
     end code block.
-
-적용결과
-
-    This is a normal paragraph:
-
-        This is a code block.
-
-    end code block.
+```
 
 **```** 을 이용하는 방법
 
-```javascript
+```js
 function test() {
   console.log('hello');
 }
@@ -61,18 +55,20 @@ function test() {
 
 ### 링크
 
-    참조링크:  [link keyword][id]
-    외부링크:  [title][link]   ex [google](https://google.com ,"google link")
+```
+참조링크:  [link keyword][id]
+외부링크:  [title][link]   ex [google](https://google.com ,"google link")
+```
 
-링크
+[링크 예시 ](https://github.com/ckdwns9121/til/tree/master/markdown)
 
 ### 수평선 hr 태그 사용
 
+```
 <hr>
+```
 
-### 강조 표시를
-
-**강조**
+### 강조
 
 ```
 **강조**
@@ -99,3 +95,15 @@ function test() {
 > > 인용구2
 > >
 > > > 인용구3
+
+### 체크리스트
+
+```
+[ ] Todo1
+[ ] Todo2
+[x] Todo3
+```
+
+[ ] Todo1
+[ ] Todo2
+[x] Todo3
