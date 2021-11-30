@@ -104,6 +104,11 @@ function test() {
 [x] Todo3
 ```
 
-[ ] Todo1
-[ ] Todo2
-[x] Todo3
+- [ ] Todo1
+- [ ] Todo2
+- [x] Todo3
+
+- [x] 프리미어프로 타입스크립트 개발환경 셋팅
+- [x] 프리미어프로 코드 리팩토링
+- [x] UXP 타입스크립트 셋팅
+- [x] EV Global Codesign 진행
