@@ -53,16 +53,26 @@ function test() {
 }
 ```
 
-### 링크
+### 외부링크
 
 ```
-참조링크:  [link keyword][id]
 외부링크:  [title][link]   ex [google](https://google.com ,"google link")
 ```
 
-- [todolist](#-todolist)
+[외부링크입니다.](https://github.com/ckdwns9121/til/tree/master/markdown)
 
-[링크 예시 ](https://github.com/ckdwns9121/til/tree/master/markdown)
+### 내부링크
+
+```
+[보여지는텍스트](#이동할-위치)
+```
+
+#### 주의할점
+
+- 알파벳은 반드시 소문자만 가능
+- 띄어쓰기는 -(하이픈)으로 구분
+
+- [todolist](#-todolist)
 
 ### 수평선 hr 태그 사용
 
