@@ -119,7 +119,7 @@ create(false); // 오류
 create(undefined); // 오류
 ```
 
-- 타입 단언 (Type assertions)
+## 2. 타입 단언 (Type assertions)
 
 타입 단언은 컴파일러에게 내가 작성한 타입을 믿어달라고 말해주는 방법이다.
 `타입 단언`은 다른언어희 타입 변환과 유사하지만 다른 특별한 검사를 하거나 데이터를 재구성 하지 않는다.
@@ -141,3 +141,73 @@ let someValue: any = 'this is a string';
 
 let strLength: number = (someValue as string).length;
 ```
+
+타입단언 간단한 코드
+
+```ts
+let a; // let a:any
+
+a = 10;
+a = 'abc';
+
+let b = a; // let b:any;
+```
+
+`b`의 값을 할당하기 전 변수 `a`의 값이 변했지만 `b`의 타입은 여전히 `any`이다.
+
+이럴때 `as`를 사용해 최종적인 타입을 선언해준다.
+
+```ts
+let b = a as string;
+```
+
+## 3. 타입가드
+
+```ts
+interface Developer {
+  name: string;
+  skill: string;
+}
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+function introduce(): Developer | Person {
+  return { name: 'Olive', age: 26, skill: 'TypeScript' };
+}
+
+let Olive = introduce();
+console.log(Olive.skill);
+```
+
+위의 코드를 보면 변수 Olive에 introduce()를 할당 해주어 `Developer`이거나 `Person`의 인터페이스를 사용할 수 있다. 하지만 `Olive.skill`을 살펴봤을 때 skill형식이 없다고 나오게 된다. 이러한 오류를 해결해보자.
+
+```ts
+if ((Olive as Developer).skill) {
+  let skill = (Olive as Developer).skill;
+  console.log(skill);
+} else if ((Olive as Person).age) {
+  let age = (Olive as Person).age;
+  console.log(age);
+}
+```
+
+타입 단언을 통해서 `skill`과 `age`를 사용할 수 있게되지만 가독성이 떨어진다.
+
+### 타입가드 적용하기
+
+```ts
+function isDeveloper(target: Developer | Person): target is Developer {
+  return (target as Developer).skill !== undefined;
+}
+
+if (isDeveloper(Olive)) {
+  Olive.skill;
+} else {
+  Olive.age;
+}
+```
+
+`is`라는 키워드를 사용하는데 위의 코드를 해석하면 **`target`**은 **`Developer`** 이다.
