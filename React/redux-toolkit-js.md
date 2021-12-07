@@ -1,20 +1,64 @@
 ## Redux Toolkit start
 
-### Redux toolkit이란
+### RTK
 
 기존 리덕스를 사용하면 액션 생성, 액션 함수 구현, 리듀서 구현등 코드가 늘어나기 마련이고, 그에 따라 복잡해진다.
+또한 비동기 작업을 위해 thunk나 saga를 별도로 설치해야한다.  
+그런데 RTK는 redux가 saga를 제외한 모든 기능을 지원한다.
 
 ```
 $yarn add @reduxjs/toolkit
 ```
+
+### configureStore
+
+```js
+import { configureStore, MiddlewareArray } from "@reduxjs/toolkit";
+import logger from "./loggerMiddleware";
+import { noticeSlice } from "./noticeSlice";
+
+export const store = configureStore({
+  // composeWithDevtools, thunk 자동 활성화
+  reducer: {
+    // 리듀서 정의
+    notice: noticeSlice.reducer,
+  },
+  middleware: new MiddlewareArray().concat(logger), // logger 미들웨어 추가
+  devTools: process.env.NODE_ENV !== "production"
+});
+
+// store 스스로 루트상태 정의
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+```
+
+- `reducer` : store의 리듀서를 정의한다. 기존의 rootReducer의 역할을 한다
+- `middleware`: 필요한 미들웨어는 위와같이 추가해준다.
+- `middlewareArray`: 는 미들웨어 array에 다른 미들웨어를 type-safe 결함하는데 사용한다
+- `devTools`: 실 서비스와 같이 리덕스 개발 도구가 보이면 안되는 상황에서 사용한다
+
+또한 `useAppDispatch`같이 훅을 export한다음 const dispatch = useDispatch() 사용하는것이 더 편리할 수 있다.
 
 ### createAction
 
 리덕스에서는 액션을 정의한다.
 
 ```javascript
-const INCREAMENT = 'count/increment';
-export const increment = createAction(INCREMENT); //returns {type : 'counter/INCREMENT'}
+export const increment = createAction('INCREMENT');
+let action = increment();
+
+action = increment(3);
+function counter(state = 0, action) {
+  switch (action.type) {
+    case increment.type:
+      return state + 1;
+    case decrement.type:
+      return state - 1;
+    default:
+      return state;
+  }
+}
 ```
 
 위의 코드에서 볼 수 있듯이 **createAction**에는 기본적으로 타입 문자열만 제공하면 된다.  
