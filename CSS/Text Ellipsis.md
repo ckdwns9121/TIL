@@ -32,7 +32,7 @@
 
 ```scss
 // 멀티라인 말줄임 표시
-// $line-cnt : 라인 수
+// $line-cnt : 라인수
 // $line-height : line-height값;
 // 사용법 : @include ellipsis(3, 1.6em);
 @mixin ellipsis($line-cnt, $line-height) {
