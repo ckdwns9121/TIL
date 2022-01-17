@@ -2,7 +2,7 @@
 
 ## Object.create
 
-`Object.create()`메서드는 지정된 프로토타입 및 객체 및 속성을 갖는 새 객체를 만든다.
+`Object.create()`메서드는 지정된 프로토타입 및 객체 및 속성을 갖는 새로운 객체를 만든다.
 
 > Object.create(ptoro[,propertiesObject])
 
