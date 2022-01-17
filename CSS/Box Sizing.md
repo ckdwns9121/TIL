@@ -8,22 +8,22 @@
 - 지정한 CSS width 및 height를 컨텐츠 영역에만 적용한다.
 - border, padding, margin은 따로 계산되어 전체 영역이 설정값보다 커질 수 있다.
 
-```
-    <html>
-        <head>
-            <style>
-                div {
-                    border : 5px black solid;
-                    width : 100px;
-                    height : 100px;
-                    box-sizing:content-box;
-                }
-            </style>
-            <body>
-                <div>content-box</div>
-            </body>
-        </head>
-    </html>
+```html
+<html>
+  <head>
+    <style>
+      div {
+        border: 5px black solid;
+        width: 100px;
+        height: 100px;
+        box-sizing: content-box;
+      }
+    </style>
+    <body>
+      <div>content-box</div>
+    </body>
+  </head>
+</html>
 ```
 
 padding: 0 , margin:0, border:5px, width:100px, height:100px 일때
@@ -44,22 +44,22 @@ content height= 100px;
 - 지정한 CSS width 및 height를 전체 영역에 적용한다.
 - border, padding, margin을 모두 합산하기 때문에 컨텐츠 영역이 설정 값 보다 작아질 수 있다.
 
-```
-    <html>
-        <head>
-            <style>
-                div {
-                    border : 5px black solid;
-                    width : 100px;
-                    height : 100px;
-                    box-sizing:border-box;
-                }
-            </style>
-            <body>
-                <div>border-box</div>
-            </body>
-        </head>
-    </html>
+```html
+<html>
+  <head>
+    <style>
+      div {
+        border: 5px black solid;
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+      }
+    </style>
+    <body>
+      <div>border-box</div>
+    </body>
+  </head>
+</html>
 ```
 
 padding: 0 , margin:0, border:5px, width:100px, height:100px 일때
