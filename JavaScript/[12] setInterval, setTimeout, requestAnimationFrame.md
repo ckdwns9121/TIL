@@ -1,6 +1,6 @@
-## setTimeout, setInterval and requestAnimationFrame
+# setTimeout, setInterval and requestAnimationFrame
 
-### 자바스크립트에서 스케쥴링
+## 자바스크립트에서 스케쥴링
 
 자바스크립트에서는 스케쥴링을 위한 **타이머 함수**가 존재한다.
 
@@ -60,7 +60,7 @@ alert(timerId);
 
 `1000ms`뒤에 실행시키기로 했던 스케쥴이 clearTimeout으로 인해 취소되었다. alert로 확인한 결과 취소되더라도 timerId는 null이 되지 않는다.
 
-### setInterval
+## setInterval
 
 ```js
 let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...);
@@ -86,7 +86,7 @@ let timerId = setTimeout(function tick() {
 }, 2000);
 ```
 
-### requestAnimationFrame
+## requestAnimationFrame
 
 자바스크립트에서 애니메이션을 구현할때 new Date()를 사용한 타이머를 이용한다. 시작지점과 종료시점을 변수에 저장해 반복실행하는 방법인데 이러한 방법은 호출 스택이 지나치게 많다는 단점이 존재한다.
 
