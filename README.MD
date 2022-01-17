@@ -9,3 +9,8 @@
 - [Kakao](https://tech.kakao.com/blog/)
 - [왓챠](https://medium.com/watcha)
 - [우아햔형제들](https://techblog.woowahan.com/)
+- [당근마켓](https://medium.com/daangn)
+
+### 개인 블로그
+
+- [Positive Ko](https://velog.io/@edie_ko)
