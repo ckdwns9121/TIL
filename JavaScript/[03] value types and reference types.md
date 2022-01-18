@@ -1,6 +1,6 @@
 ## Value types and Reference Types
 
-자바스크립트에서 원시타입(primitive types)인 `Boolen`, `null`, `undefined`, `String`, `Number` 타입은 값에 의한 전달이 일어나며 원시 타입이 아닌 Object 타입은 참조에 의한 전달이 일어난다.
+자바스크립트에서 원시타입(primitive types)인 `Boolen`, `null`, `undefined`, `String`, `Number`,`Symbol` 타입은 **값에 의한 전달**이 일어나며 원시 타입이 아닌 `Object` 타입은 **참조에 의한 전달**이 일어난다.
 
 ### Overview
 
@@ -11,7 +11,7 @@
 
 ### Primitives Type (원시 타입)
 
-기본 유형의 메모리 내 값은 실제값이다. (ex `number` 42 `boolen` true) 기본 유형은 사용 가능한 고정된 양의 메모리에 저장할 수 있다.
+기본 유형의 메모리 내 값은 **실제값**이다. (ex `number` 42 `boolen` true) 기본 유형은 사용 가능한 고정된 양의 메모리에 저장할 수 있다.
 
 - null
 - undefined
