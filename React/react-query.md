@@ -43,12 +43,10 @@ export default function App() {
 
 react-query는 api 통신 로직 자체를 직접적으로 다루지는 않는다. 이 훅에서 제공하는 정확한 기능은 **비동기 함수와 그것의 리턴 값**에 대한 데이터 캐싱 등의 기능이다.
 
-이는 각각의 데이터에 `query`라는 이름을 붙인다. 그리고 각각의 `query`마다 unique한 `key`값을 제공해야한다. 이 `key`값을 통해 해당하는 함수와 데이터를 식별하고, 그 데이터를 알아서 잘 처리해주는 것이다. 이를 `queryKey`라고 부른다. 사용법에 대한 자세한 정보는
-[문서](https://react-query.tanstack.com/guides/query-keys) 에서 확인할 수 있다.
-
 ## 기존 상태관리
 
-기존의 데이터 페칭에는 로딩, 에러, 데이터 관리 등을 위해 여러 훅을 사용해야 했으나 `react-query`를 사용하면 훨씬 간단하게 구현할 수 있다.
+기존의 데이터 페칭에는 로딩, 에러, 데이터 관리 등을 위해 여러 훅을 사용해야 했으나 `react-query`를 사용하면 훨씬 간단하게 구현할 수 있다.  
+우선 기존의 상태관리를 보자.
 
 ```js
 // ❌ : 기존의 데이터 페칭 로직 시 사용하는 훅들
@@ -76,18 +74,20 @@ useEffect(() => {
 }, []);
 ```
 
+코드도 복잡하고 가독성도 좋지않다. 여러 state를 페이지마다 반복적으로 사용하게 되고, 비동기 로직에 대한 추상화도 잘 이루어지지 않는다.  
+이를 해결하기 위해 `useQuery`훅을 사용해보자.
+
 ## useQuery 훅
+
+보통 서버에서 데이터를 불러올 때 useEffect에서 API요청을 하고 로딩상태 및 에러상태 등을 따로따로 직접 관리해야하는 불편함이 있었다.  
+error상태인지 fetching 상태인지 success 상태인지 등을 하나한 처리해줬던 기본 로직과는 반대로 `react-query`는 모든 API요청에 대한 여러 결과값과 함수를 가지고있다.
+
+이를 `react-query`로 구현해보면 어떨까?
 
 ```js
 // ✅ : react-query를 사용하면 하나의 훅으로 모든 페칭에 연관된 상태를 한번에 제어할 수 있다.
 const { status, data, error, isFetching } = useQuery(() => fetch(URL));
 ```
-
-보통 서버에서 데이터를 불러올 때 useEffect에서 API요청을 하고 로딩상태 및 에러상태 등을 따로따로 직접 관리해야하는 불편함이 있었다.
-
-코드도 복잡하고 가독성도 좋지않다. 여러 state를 페이지마다 반복적으로 사용하게 되고, 비동기 로직에 대한 추상화도 잘 이루어지지 않는다.
-
-이를 `react-query`로 구현해보면 어떨까?
 
 ```js
 const queryKey = ; // 당연히 보통 이렇게 변수 따로 안 만들고 useQuery 안에 바로 적습니다
@@ -105,7 +105,8 @@ const { isLoading, data } = useQuery(
 );
 ```
 
-훨씬 더 간결하게 비동기 관련 로직을 다 담을 수 있다.
+이는 각각의 데이터에 `query`라는 이름을 붙인다. 그리고 각각의 `query`마다 unique한 `key`값을 제공해야한다. 이 `key`값을 통해 해당하는 함수와 데이터를 식별하고, 그 데이터를 알아서 잘 처리해주는 것이다. 이를 `queryKey`라고 부른다. 또한 이 `queryKey`를 이용해 해당 데이터를 다른곳에서도 꺼내서 사용할 수 있다. 사용법에 대한 자세한 정보는 [문서](https://react-query.tanstack.com/guides/query-keys) 에서 확인할 수 있다.
+
 `useQuery`훅은 더 나아가 `isFetching`, `isError` , `refresh`등의 다양한 상태들을 함수와 함께 제공해준다.
 
 ## useMutation
