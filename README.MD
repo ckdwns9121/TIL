@@ -15,3 +15,11 @@
 
 - [Positive Ko](https://velog.io/@edie_ko)
 - [stevy](https://www.stevy.dev/)
+- [음악, 삶, 개발](https://leestrument.tistory.com)
+
+### 유튜브
+
+- [빔캠프](https://www.youtube.com/c/veamcamp)
+- [EO](https://www.youtube.com/channel/UCQ2DWm5Md16Dc3xRwwhVE7Q)
+- [코딩애플](https://www.youtube.com/channel/UCSLrpBAzr-ROVGHQ5EmxnUg)
+- [조코딩](https://www.youtube.com/c/%EC%A1%B0%EC%BD%94%EB%94%A9JoCoding)
