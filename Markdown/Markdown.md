@@ -121,3 +121,26 @@ function test() {
 - [x] Todo3
 
 ## 📍 todolist
+
+### 토글
+
+마크다운에서 토글을 제공해주지 않는다. 그렇기 때문에 html태그를 활용해서 토글 기능을 사용할 수 있다.
+
+이 기능을 제공하는 html 태그가 바로 `details`인데 `div markdown="1"`을 꼭 입력해줘야 한다.
+
+```html
+<details>
+  <summary>토글 접기/펼치기</summary>
+  <div markdown="1">안녕</div>
+</details>
+```
+
+<details>
+  <summary>토글 접기/펼치기</summary>
+  <div markdown="1">안녕</div>
+</details>
+
+<details>
+  <summary>토글 접기/펼치기2</summary>
+  <div markdown="1">안녕2</div>
+</details>
