@@ -179,3 +179,14 @@ $wrap-width: 1000px;
   border: 1px solid red;
 }
 ```
+
+### 11. global()
+
+`global()`는 전역으로 스타일링 할 수 있다.
+
+```scss
+:global(.box) {
+  width: 10px;
+  height: 10px;
+}
+```
