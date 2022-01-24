@@ -241,3 +241,7 @@ return (
 하지만 요즘은 client state와 server state를 확실히 분리하여 관리하는 것으로 코드를 작성하는 것 같다.
 
 client state를 관리할 땐 redux나 Mobx와 같은 상태관리 툴을 사용하고 server state를 관리할 땐 react-query를 사용해서 관리해보자
+
+### 캐싱
+
+항상 리액트 프로젝트 할때 라우터 캐싱이 문제였는데 react-query는 라우터 캐싱 기능을 제공해줘서 굉장히 편리한 것 같다.
