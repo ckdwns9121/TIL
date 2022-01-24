@@ -69,8 +69,7 @@ const fetchData = async () => {
 };
 
 useEffect(() => {
-  const tick = setInterval(fetchData, 3000);
-  return () => clearInterval(tick);
+  fetchData();
 }, []);
 ```
 
@@ -226,4 +225,19 @@ return (
 );
 ```
 
-정리중
+- getNextPageParam: (lastPage, allPages) => 다음 페이지를 불러오기 위한 함수
+- isFetchingNextPage : 다음페이지를 가져오고 있는 중인지 여부(로딩중)
+- fetchNextPage : 다음 페이지를 가져올 수 있다.
+- fetchPreviousPage : 이전 페이지를 가져올 수 있다.
+- hasNextPage : 가져올 다음 페이지가 있는경우 `true`
+- hasPreviousPage: 가져올 이전 페이지가 있는경우 `true`
+
+## 써보면서 느낀점
+
+### 스토어를 스토어 답게 썼나?
+
+`store`는 전역 상태를 저장하고 관리되는 공간인데 보통 비동기 로직을 편하게 사용하려고 `redux-saga` 나 `redux-thunk`를 사용하였다. 사실 해당 미들웨어를 왜 쓰는지? 꼭 필요한지? 정확한 이유를 모른체 다들 비동기 처리할 때 쓰니까 썼던것 같다.
+
+하지만 요즘은 client state와 server state를 확실히 분리하여 관리하는 것으로 코드를 작성하는 것 같다.
+
+client state를 관리할 땐 redux나 Mobx와 같은 상태관리 툴을 사용하고 server state를 관리할 땐 react-query를 사용해서 관리해보자
