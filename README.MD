@@ -16,6 +16,7 @@
 - [Positive Ko](https://velog.io/@edie_ko)
 - [stevy](https://www.stevy.dev/)
 - [음악, 삶, 개발](https://leestrument.tistory.com)
+- [zigae](https://www.zigae.com)
 
 ### 유튜브
 
