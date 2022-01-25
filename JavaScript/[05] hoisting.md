@@ -180,3 +180,15 @@ yourName = 'bye';
 console.log(typeof myName); //string
 console.log(typeof yourName); //string
 ```
+
+# 추가
+
+## 자바스크립트의 어휘적 범위(lexical scope)
+
+의미사용이론에 따르면 단어의 의미는 그 어휘적인, 근처 환경에서의 의미가 된다. 이는 자바스크립트에서 다음처럼 적용된다.
+
+> 변수의 의미는 그 **어휘적인(lexical), 실행문맥(excution context)**에서의 의미가 된다.
+
+그렇기 때문에 동일 범위(실행 문맥)의 모든 `선언`을 참고(호이스팅)하여 의미를 정한다.
+
+> 호이스팅은 실행 컨텍스트 생성 시 렉시컬 스코프 내의 선언이 끌어올려지는게 호이스팅이다.
