@@ -74,3 +74,28 @@ async function pickFruits() {
 }
 pickFruits().then(res => console.log(res));
 ```
+
+# 문제
+
+```js
+async function sleep() {
+  console.log('sleep'); //2
+}
+async function foo() {
+  await sleep();
+  console.log('foo'); // 5
+}
+async function bar() {
+  console.log('bar');
+}
+async function bazzz() {
+  console.log('temp'); //1
+  const f = foo();
+  console.log('bazzzz'); //3
+  await bar(); //4
+  await bar(); //6
+  console.log('hello');
+  console.log('test');
+}
+bazzz();
+```
