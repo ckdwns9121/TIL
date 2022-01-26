@@ -20,7 +20,7 @@ deps 배열에 빈 값을 넣으면 마운트 될 때만 실행된다.
 ```js
 useEffect(() => {
   //function
-}, []);
+}, [])
 ```
 
 만약 배열을 생략한다면 렌더링 될 때 마다 실행되므로 성능측면에서 비효율 적이다.
@@ -31,8 +31,8 @@ useEffect(() => {
 
 ```js
 useEffect(() => {
-  console.log(state + '변경');
-}, [state]);
+  console.log(state + '변경')
+}, [state])
 ```
 
 ## unmount될 때 실행
@@ -43,9 +43,21 @@ useEffect(() => {
 
 ```js
 useEffet(() => {
-  console.log('mount');
+  console.log('mount')
   return () => {
-    console.log('unmount');
-  };
-}, []);
+    console.log('unmount')
+  }
+}, [])
+```
+
+### 추가
+
+useEffect의 리턴값은 클린업 함수이다.  
+이 return은 promise가 아니기 때문에 async를 사용할 수 없다.
+
+```js
+//❌
+useEffect(async () => {
+  return () => {}
+})
 ```
