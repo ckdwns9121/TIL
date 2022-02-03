@@ -17,6 +17,7 @@
 - [stevy](https://www.stevy.dev/)
 - [음악, 삶, 개발](https://leestrument.tistory.com)
 - [zigae](https://www.zigae.com)
+- [jakeseo](https://velog.io/@jakeseo_me)
 
 ### 유튜브
 
