@@ -19,7 +19,7 @@ $yarn init -y // 또는 npm init -y
 그 다음에는 타입스크립트 설정파일 `tsconfig.json`을 만들어보자.
 다음과 같이 디렉터리에 `tsconfig.json`파일을 생성후 직접 작성하기.
 
-```
+```json
 {
   "compilerOptions": {
     "target": "es5",
