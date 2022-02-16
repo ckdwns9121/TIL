@@ -42,7 +42,7 @@ maddie.eat(); // NyamNaym
 
 ## Object.assign
 
-`Object.assign()`메소드는 ES6 문법에 도입되었으며, 출처 객체들의 모든 열거 가능한 자체 속성을 복사해 대상 객체에 붙여넣고 그 대상 객체를 반환한다.
+`Object.assign()`메소드는 ES6 문법에 도입되었으며, 출처 객체들의 모든 열거 가능한 자체 속성을 **복사**해 대상 객체에 붙여넣고 그 대상 객체를 반환한다.
 
 > Object.assign(target, ...source)
 
