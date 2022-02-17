@@ -7,6 +7,10 @@
 
 자바스크립트에서 호이스팅은 코드에 선언된 변수 및 함수를 코드 상단으로 끌어올리는 것이며 이는 **변수 범위가 전역인지 함수내 인지**에 따라 다르게 수행된다.
 
+## 호이스팅의 대상
+
+### 1. var 변수 선언
+
 ```javascript
 console.log(name);
 var name = 'hello';
@@ -26,25 +30,35 @@ console.log(name);
 name = 'hello';
 ```
 
-실제로 이동하진 않지만 이렇게 최상위로 이동하는 것을 호이스팅이라 한다.
+### 2. 함수 선언문
 
-그렇다면 let과 const는 호이스팅이 되지 않나? no
-let과 const는 TDZ영역을 받는다.
+```js
+foo();
+foo2();
 
-## Temporal Dead Zone(TDZ)
+function foo() {
+  // 함수선언문
+  console.log('hello');
+}
+var foo2 = function () {
+  // 함수표현식
+  console.log('hello2');
+};
+```
 
-let과 const가 호이스팅이 되기전 TDZ에 대해 알아야한다.
+```js
+var foo2;
+function foo() {
+  console.log('hello');
+}
+foo();
+foo2(); //ERROR! foo2 is not function!
+foo2 = function () {
+  console.log('hello2');
+};
+```
 
-자바스크립트에서 변수는 선언,초기화,할당 3단계로 나누어진다.
-
-1. var: 선언단계+ 초기화단계 -> 할당단계
-2. let: 선언단계 -> 초기화단계 -> 할당단계
-3. const: 선언단계 + 초기화단계 + 할당단계
-
-이렇게 변수마다 차이점이 존재한다.
-그렇기 때문에 실행 컨텍스트에 변수를 등록했지만, 메모리가 할당이 되질 않아서 접근할 수 없기 때문에 참조 에러가 발생한다.
-
-var는 함수 스코프에서 접근가능하고 let과 const는 블록스코프이다.
+**호이스팅 시 함수 선언문과 함수 표현식에서 서로 다르게 동작한다.**
 
 ## 함수선언문과 함수표현식에서의 호이스팅
 
@@ -180,6 +194,24 @@ yourName = 'bye';
 console.log(typeof myName); //string
 console.log(typeof yourName); //string
 ```
+
+## Temporal Dead Zone(TDZ)
+
+그렇다면 let과 const는 호이스팅이 되지 않나? no
+let과 const는 TDZ영역을 받는다.
+
+let과 const가 호이스팅이 되기전 TDZ에 대해 알아야한다.
+
+자바스크립트에서 변수는 선언,초기화,할당 3단계로 나누어진다.
+
+1. var: 선언단계+ 초기화단계 -> 할당단계
+2. let: 선언단계 -> 초기화단계 -> 할당단계
+3. const: 선언단계 + 초기화단계 + 할당단계
+
+이렇게 변수마다 차이점이 존재한다.
+그렇기 때문에 실행 컨텍스트에 변수를 등록했지만, 메모리가 할당이 되질 않아서 접근할 수 없기 때문에 참조 에러가 발생한다.
+
+var는 함수 스코프에서 접근가능하고 let과 const는 블록스코프이다.
 
 # 추가
 
