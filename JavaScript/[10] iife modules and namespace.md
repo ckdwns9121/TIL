@@ -2,7 +2,7 @@
 
 ## IIFE
 
-IIFE (Immediately Invoked Function Expressions)는 즉시 호출 함수 표현식의 줄임말이다.
+IIFE (Immediately Invoked Function Expressions)는 **즉시 호출 함수 표현식**의 줄임말이다.
 
 즉시 실행 함수는 **함수 리터럴**을 `()`로 감싼 뒤 바로 실행하는 형태가 일반적이다.
 
