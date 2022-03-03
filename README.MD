@@ -19,6 +19,7 @@
 - [음악, 삶, 개발](https://leestrument.tistory.com)
 - [zigae](https://www.zigae.com)
 - [jakeseo](https://velog.io/@jakeseo_me)
+- [oneook](https://velog.io/@oneook)
 
 ### 유튜브
 
