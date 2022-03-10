@@ -20,6 +20,7 @@
 - [zigae](https://www.zigae.com)
 - [jakeseo](https://velog.io/@jakeseo_me)
 - [oneook](https://velog.io/@oneook)
+- [chris](https://velog.io/@chris)
 
 ### 유튜브
 
