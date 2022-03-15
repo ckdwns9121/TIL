@@ -24,6 +24,7 @@
 
 ### 유튜브
 
+- [FEConf Korea](https://www.youtube.com/channel/UCWEzfYIpFBIG5jh6laXC6hA)
 - [빔캠프](https://www.youtube.com/c/veamcamp)
 - [EO](https://www.youtube.com/channel/UCQ2DWm5Md16Dc3xRwwhVE7Q)
 - [코딩애플](https://www.youtube.com/channel/UCSLrpBAzr-ROVGHQ5EmxnUg)
