@@ -37,6 +37,7 @@
 - [useEffect 완벽 가이드](https://rinae.dev/posts/a-complete-guide-to-useeffect-ko)
 - [Teach Interview](https://gyoogle.dev/blog/)
 - [트랜디한 리엑트UI 10가지](https://usecode.pw/10-best-react-ui-library/)
+- [HTTP](https://developer.mozilla.org/ko/docs/Web/HTTP)
 
 ### 강의 사이트
 
