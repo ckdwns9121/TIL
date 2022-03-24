@@ -11,6 +11,7 @@
 - [우아한형제들](https://techblog.woowahan.com/)
 - [당근마켓](https://medium.com/daangn)
 - [요즘IT](https://yozm.wishket.com/magazine)
+- [리디](https://ridicorp.com/story-category/all/)
 
 ### 개인 블로그
 
