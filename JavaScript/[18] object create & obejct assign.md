@@ -69,3 +69,22 @@ const newState = Object.assign(target, soruce);
 newState.a = 5;
 console.log(target.a); //5
 ```
+
+# 추가작성
+
+## Object.keys()
+
+- Object.keys() 메소드는 주어진 객체의 속성 이름들을 일반적인 반복문과 동일한 순서로 순회되는 열거할 수 있는 배열로 반환
+
+- 객체의 키 값만 뽑는다.
+
+```js
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false,
+};
+
+console.log(Object.keys(object1));
+// expected output: Array ["a", "b", "c"]
+```
