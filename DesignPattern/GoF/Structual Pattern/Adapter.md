@@ -21,3 +21,64 @@
 ![과정](./asset/adapter-pattern-2.png)
 
 클라이언트는 Adapter에게 TargetInterface의 함수를 요청한다.
+
+# 어댑터 패턴의 장 단점
+
+## 장점
+
+- 기존 인터페이스를 변경할 필요없이 어댑터만 구현하여 호환성을 갖출 수 있다.
+- 새로운 코드의 기능을 기존 인터페이스와 일관되게 사용할 수 있다.
+
+## 단점
+
+- 상황에 따라 어댑터의 구현이 복잡해져 클라이언트가 인터페이스를 수정하는 방법이 더 나은 케이스가 될 수 있다.
+
+# 어댑터 패턴을 언제 사용하는가?
+
+- 기존 코드의 변경 없이 다른 인터페이스를 사용할 때
+- 써드 파티 라이브러리를 기존 코드와 분리해 사용하기 위해 어댑터를 중간 역할로 사용한다.
+
+# 예제 코드
+
+```js
+class Animal {
+  constructor(species) {
+    this.species = species;
+  }
+
+  walk() {
+    return `${this.species} is walking...`;
+  }
+}
+
+class Dog extends Animal {}
+
+class Cat extends Animal {}
+
+class FishAdapter extends Animal {
+  constructor(fish) {
+    super(fish);
+    this.fish = fish;
+  }
+
+  walk() {
+    return this.fish.swim();
+  }
+}
+
+class Fish extends FishAdapter {
+  swim() {
+    return `${this.fish} is swimming...`;
+  }
+}
+
+const dog = new Dog('dog');
+const cat = new Cat('cat');
+
+console.log(dog.walk()); // dog is walking...
+console.log(cat.walk()); // cat is walking...
+
+const fish = new Fish('fish');
+const adaptedFish = new FishAdapter(fish);
+console.log(adaptedFish.walk()); // fish is swimming...
+```
