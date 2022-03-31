@@ -8,7 +8,7 @@
 - 빌더
 - 팩토리 메서드
 - 프로토타입
-- [싱글톤](https://github.com/ckdwns9121/TIL/blob/master/DesignPattern/GoF/GoF%20%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4.md)
+- [싱글톤](https://github.com/ckdwns9121/TIL/blob/master/DesignPattern/GoF/Creational%20Pattern/Singleton.md)
 
 ## 구조 패턴(Structual Pattern)
 
