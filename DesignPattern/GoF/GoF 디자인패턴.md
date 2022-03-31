@@ -12,7 +12,7 @@
 
 ## 구조 패턴(Structual Pattern)
 
-- 어댑터
+- [어댑터](https://github.com/ckdwns9121/TIL/blob/master/DesignPattern/GoF/Structual%20Pattern/Adapter.md)
 - 브릿지
 - 컴포지트
 - 데코레이터
