@@ -1,6 +1,6 @@
-## 프로토타입 이해하기
+# 프로토타입 이해하기
 
-### Prototype vs Class
+## Prototype vs Class
 
 클래스는 객체지향언어에서 빠질 수 없는 개념이다. 나무위키에 나와있는 자바스크립트의 특징을 보면 아래와 같이 말한다
 
@@ -42,7 +42,7 @@ console.log(kim.age); //16
 
 Person.prototype이라는 빈 Object가 어딘가에 존재하고 , Person 함수로 부터 생성된 객체들은 어딘가에 존재하는 Object를 참조하여 이 안에있는 값을 모두 사용할 수 있다.
 
-![ex_screenshot](./asset/prototype.png)
+![ex_screenshot](../asset/prototype.png)
 
 ### Prototype Link와 Prototype Object
 

@@ -18,24 +18,24 @@ scroll, resize, input, mosemove 같은 이벤트는 짧은 시간 간격으로 �
 주소를 검색하는 api에 실시간으로 보여지게 하고싶다.
 
 ```js
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 function useDebounced(value: string, delay: number) {
-  const [debouncedValue, setDebouncedValue] = useState < string > value
+  const [debouncedValue, setDebouncedValue] = useState < string > value;
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDebouncedValue(value)
-    }, delay)
+      setDebouncedValue(value);
+    }, delay);
     return () => {
-      clearTimeout(timer)
-    }
-  }, [value, delay])
+      clearTimeout(timer);
+    };
+  }, [value, delay]);
 
-  return debouncedValue
+  return debouncedValue;
 }
 
-export default useDebounced
+export default useDebounced;
 ```
 
 우선 값이 변경되는 `temp`값을 하나 만들고 useEffect에서 `디바운싱`을 구현했다.
@@ -55,11 +55,11 @@ useEffect(() => {
 ```
 
 위와 같이 작성하면 API요청을 최적화 할 수 있다.
-![디바운싱](./asset/디바운싱1.png)
+![디바운싱](../asset/디바운싱1.png)
 
 ## 스로틀
 
-스로틀은 짧은 시간 간격으로 이벤트가 연속해서 발생하더라도 일정 시간 간격으로 이벤트 핸들러가 최대 한번만 호출되도록 한다. 즉 ,스로틀은 짧은 시간 간격으로 연속해서 발생하는 이벤트를 그룹화해서 일정 시간 단위로 이벤트 핸들러가 호출되도록 호출 주기를 만든다.
+스로틀은 짧은 시간 간격으로 이벤트가 연속해서 발생하더라도 일정 시간 간격으로 이벤트 핸들러가 **최대 한번만 호출**되도록 한다. 즉 ,스로틀은 짧은 시간 간격으로 연속해서 발생하는 이벤트를 그룹화해서 일정 시간 단위로 이벤트 핸들러가 호출되도록 호출 주기를 만든다.
 
 ```html
 <!DOCTYPE html>
@@ -87,32 +87,32 @@ useEffect(() => {
       <span class="throttle-count">0</span>
     </div>
     <script>
-      const $container = document.querySelector('.container')
-      const $throttleCount = document.querySelector('.throttle-count')
+      const $container = document.querySelector('.container');
+      const $throttleCount = document.querySelector('.throttle-count');
 
       const throttle = (callback, delay) => {
-        let timerId
+        let timerId;
         // throttle 함수는 timerId를 기억하는 클로저를 반환한다.
         return event => {
-          if (timerId) return
+          if (timerId) return;
           timerId = setTimeout(
             () => {
-              callback(event)
-              timerId = null
+              callback(event);
+              timerId = null;
             },
             delay,
             event
-          )
-        }
-      }
-      let throttleCount = 0
+          );
+        };
+      };
+      let throttleCount = 0;
       // throttle 함수가 반환하는 클로저가 이벤트 핸들러로 등록된다.
       $container.addEventListener(
         'scroll',
         throttle(() => {
-          $throttleCount.textContent = ++throttleCount
+          $throttleCount.textContent = ++throttleCount;
         }, 100)
-      )
+      );
     </script>
   </body>
 </html>

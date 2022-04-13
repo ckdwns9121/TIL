@@ -1,4 +1,4 @@
-### Arrow Function이란?
+# Arrow Function이란?
 
 - ES6부터 추가된 표현
 - function 표현에 비해 구문이 짧다.
