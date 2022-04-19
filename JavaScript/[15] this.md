@@ -30,8 +30,8 @@ x() === window; //true;
 
 ```js
 let person = {
-  firstName: 'Changjun',
-  lastName: 'Park',
+  firstName: "Changjun",
+  lastName: "Park",
 
   getFullName() {
     console.log(this.firstName + this.LastName);
@@ -44,15 +44,11 @@ person.getFullName(); // ChangejunPark
 3. 생성자 함수로 호출시 생성자 함수가 생성할 객체에 바인딩
 
 ```js
-function Person() {
-  (this.firstName = 'Changjun'),
-    (this.lastName = 'Park'),
-    (this.start = function () {
-      console.log(this.firstName + this.lastName);
-    });
+function Person(color) {
+  this.color = red;
 }
-let jone = new Person();
-jone.start(); // ChangjunPark
+let apple = new Person("red");
+console.log(apple.color); // red
 ```
 
 4. Call,Apply,Bind 메소드 사용시 메소드에 첫번째 인자로 전달하는 객체에 바인딩.
@@ -80,13 +76,13 @@ this는 **함수 호출 방식**에 따라 동적으로 결정된다. 함수를 
 프로토타입 기반 언어에서는 this가 정의된 함수가 어떻게 발화(invoke)했는지에 따라 가리키는 값이 달라진다. **정확히는 받아들이는 대상의 컨텍스트를 가리킨다.**
 
 ```js
-var someValue = 'hello';
+var someValue = "hello";
 function outerFunc() {
   console.log(this.someValue); // 첫번째 : ?, 두번째 : ?
   this.innerFunc();
 }
 const obj = {
-  someValue: 'world',
+  someValue: "world",
   outerFunc,
   innerFunc: function () {
     console.log("innerFunc's this : ", this); // 첫번째 : ?, 두번째 : ?
