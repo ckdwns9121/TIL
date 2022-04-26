@@ -22,6 +22,7 @@
 - [jakeseo](https://velog.io/@jakeseo_me)
 - [oneook](https://velog.io/@oneook)
 - [chris](https://velog.io/@chris)
+- [ui](https://velog.io/@kimbyungchan)
 
 ### 유튜브
 
