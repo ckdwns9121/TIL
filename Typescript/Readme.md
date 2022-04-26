@@ -52,9 +52,22 @@ tsc --init
 `src/practice.ts`라는 파일 생성
 
 ```ts
-const message: string = 'hello';
+const message: string = "hello";
 console.log(message);
 ```
 
 해당 코드를 작성하고 빌드를 원한다면 `tsc` 명령어를 입력하면 됨.
 그러면 dist/practice.js라는 컴파일된 js파일이 생성됨.
+
+### 4. 타입스크립트 실행
+
+```
+$ npm install ts-node
+ts-node index.ts
+```
+
+### 추가
+
+#### tsconfig 설정
+
+react + ts 설정시 `compilerOptions`에서 `jsx`를 `react`로 설정하면 `import * as React from 'react`로 리액트를 가지고 와야하는 이슈가 있는데 이 컴파일러 옵션을 `react-jsx`로 바꾸면 해결된다.
