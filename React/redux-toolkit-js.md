@@ -45,7 +45,7 @@ export const useAppDispatch = () => useDispatch<AppDispatch>();
 리덕스에서는 액션을 정의한다.
 
 ```javascript
-export const increment = createAction('INCREMENT');
+export const increment = createAction("INCREMENT");
 let action = increment();
 
 action = increment(3);
@@ -67,7 +67,7 @@ function counter(state = 0, action) {
 만약 리턴되는 액션 객체에 더 손을 보고싶으면 콜백함수를 createAction의 두번째 파라미터로 전달하면 된다.
 
 ```javascript
-const addTodo = createAction('todos/add', function prepare(text) {
+const addTodo = createAction("todos/add", function prepare(text) {
   return {
     payload: {
       text,
@@ -76,7 +76,7 @@ const addTodo = createAction('todos/add', function prepare(text) {
   };
 });
 
-addTodo('hello world');
+addTodo("hello world");
 
 /** returns
  * {
@@ -170,14 +170,33 @@ export const {addTodo, deleteTodo} = todoSlice.action;
 export default todoSlice.reducer
 ```
 
-### useTypedSelector
+### Define Typed Hooks
 
-함수형 컴포넌트 안에서 Redux state 객체를 가져오는 useSelector 훅의 파라미터는 root state다.  
- 거기에 아래처럼 일일이 IRootState로 파라미터를 붙여도 되지만, 그렇게 하지 않아도 되도록 react-redux 에서 헬퍼 타입을 제공한다.
+`useSelectore` , `useDispatch` 각각 나의 애플리케이션에 맞게 훅으로 만드는 것이 좋다.
+
+- 매번 `useSelectore`에 `(state:RootState)`로 타입을 지정해주는 것이 번거롭다.
+- `useDispatch`는 thunk에 대해 알지 못한다. thunk를 올바르게 dispatch하려면 thunk 미들웨어 유형을 포함하는 저장소에 특정 사용자 지정 `AppDispatch` 유형을 사용하면 좋다.
 
 ```javascript
-import { TypedUseSelectorHook, useSelector } from 'react-redux';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import type { RootState, AppDispatch } from './store'
 
-// useSelector hook 대신 사용. useSelector 함수의 파라미터에 타입을 지정하지 않아도 된다.
-export const useTypedSelector: TypedUseSelectorHook<IRootState> = useSelector;
+// Use throughout your app instead of plain `useDispatch` and `useSelector`
+export const useAppDispatch = () => useDispatch<AppDispatch>()
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+```
+
+```js
+import React from "react";
+import { useAppSelector, useAppDispatch } from "app/hooks";
+
+import { decrement, increment } from "./counterSlice";
+
+export function Counter() {
+  // The `state` arg is correctly typed as `RootState` already
+  const count = useAppSelector(state => state.counter.value);
+  const dispatch = useAppDispatch();
+
+  // omit rendering logic
+}
 ```
