@@ -249,3 +249,4 @@ client state를 관리할 땐 redux나 Mobx와 같은 상태관리 툴을 사용
 ## 참고
 
 [My구독 react-query 전환기](https://tech.kakao.com/2022/06/13/react-query/)
+[tanstack](https://tanstack.com/query/v4/docs/overview)
