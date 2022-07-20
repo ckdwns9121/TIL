@@ -58,7 +58,7 @@ const fetchData = async () => {
   try {
     setIsError(false);
     setIsLoading(true);
-    const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
+    const response = await axios.get("https://jsonplaceholder.typicode.com/todos");
     setData(response.data);
     setIsLoading(false);
   } catch (err) {
@@ -117,15 +117,15 @@ const { isLoading, data } = useQuery(
 ```js
 function App() {
   const mutation = useMutation(newTodo => {
-    return axios.post('/todos', newTodo);
+    return axios.post("/todos", newTodo);
   });
 
   // 배열 비구조화 할당으로 아래와 같이 mutate함수만 따로 들고올 수도 있다.
-  const [mutate] = useMutation(newTodo => axios.post('/todos', newTodo));
+  const [mutate] = useMutation(newTodo => axios.post("/todos", newTodo));
   return (
     <div>
       {mutation.isLoading ? (
-        'Adding todo...'
+        "Adding todo..."
       ) : (
         <>
           {mutation.isError ? <div>An error occurred: {mutation.error.message}</div> : null}
@@ -134,7 +134,7 @@ function App() {
 
           <button
             onClick={() => {
-              mutation.mutate({ id: new Date(), title: 'Do Laundry' });
+              mutation.mutate({ id: new Date(), title: "Do Laundry" });
             }}
           >
             Create Todo
@@ -192,7 +192,7 @@ const { fetchNextPage, fetchPreviousPage, hasNextPage, hasPreviousPage, isFetchi
 실제 영화 API를 받아오는 코드를 작성하고 `page`를 `1`씩 넘겨보겠다.
 
 ```js
-import { getMoviesAPI } from '../api/movie';
+import { getMoviesAPI } from "../api/movie";
 
 const {
   isLoading,
@@ -205,7 +205,7 @@ const {
   isFetchingNextPage,
   isFetchingPreviousPage,
   ...result
-} = useInfiniteQuery('movies', ({ pageParam = 1 }) => getMoviesAPI(pageParam), {
+} = useInfiniteQuery("movies", ({ pageParam = 1 }) => getMoviesAPI(pageParam), {
   getNextPageParam: (lastPage, pages) => {
     return pages.length + 1;
   },
@@ -214,12 +214,12 @@ const {
 if (isLoading) return <>Loading..</>;
 if (error) return <>An error has occurred</>;
 return (
-  <div className={styles['container']}>
+  <div className={styles["container"]}>
     {data?.pages.map((movies, i) => {
       return <MovieList key={i} movies={movies} />;
     })}
     <button onClick={() => fetchNextPage()} disabled={!hasNextPage || isFetchingNextPage}>
-      {isFetchingNextPage ? 'Loading more...' : hasNextPage ? 'Load More' : 'Nothing more to load'}
+      {isFetchingNextPage ? "Loading more..." : hasNextPage ? "Load More" : "Nothing more to load"}
     </button>
   </div>
 );
@@ -245,3 +245,7 @@ client state를 관리할 땐 redux나 Mobx와 같은 상태관리 툴을 사용
 ### 캐싱
 
 항상 리액트 프로젝트 할때 라우터 캐싱이 문제였는데 react-query는 라우터 캐싱 기능을 제공해줘서 굉장히 편리한 것 같다.
+
+## 참고
+
+[My구독 react-query 전환기](https://tech.kakao.com/2022/06/13/react-query/)
