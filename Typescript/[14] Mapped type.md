@@ -67,7 +67,7 @@ async function fetchUser(): Promise<User> {
 
 ```ts
 interface UpdateUser {
-  userName?: string;
+  name?: string;
   email?: string;
   profileImageURL: string;
 }
@@ -81,13 +81,13 @@ async function updateUser(params: UpdateUser) {
 
 ```ts
 interface User {
-  userName: string;
+  name: string;
   email: string;
   profileImageURL: string;
 }
 
 interface UpdateUser {
-  userName?: string;
+  name?: string;
   email?: string;
   profileImageURL: string;
 }
@@ -97,7 +97,7 @@ interface UpdateUser {
 
 ```ts
 type UpdateUser = {
-  userName?: User['userName'];
+  name?: User['name'];
   email?: User['email'];
   profileImageURL?: User['profileImageURL'];
 };
